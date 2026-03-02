@@ -5,12 +5,21 @@
 Use this section to tell people about which versions of your project are
 currently being supported with security updates.
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 0.1.x   | :white_check_mark: |
+| Version | Project Context Clues Package Supported    |
+| ------- | ------------------------------------------ |
+| 0.1.x :white_check_mark:  | Cyber Tool Converter Kit |
+| 1.0.x :white_check_mark:  | Cyber Tool Converter Kit |
+| 0.1.x :white_check_mark:  | Vector Ingest3r          |
+| 1.0.x :white_check_mark:  | Vector Ingest3r          |
+
+| Supported        | Vector Database   |
+| ---------------- | ----------------- |
+|:white_check_mark:|  Qdrant           |
+|:white_check_mark:|  ChomaDB          |
+| in progress      |  Weaviate         |
+| coming soon      |  Pinecone         |
 
 ## Reporting a Vulnerability
-
 Use this section to tell people how to report a vulnerability.
 
 Tell them where to go, how often they can expect to get an update on a

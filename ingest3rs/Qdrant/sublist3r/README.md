@@ -1,21 +1,20 @@
 <table align="center">
   <tr>
     <td align="center" width="50%">
-      <a href="https://github.com/projectdiscovery/nuclei">
-        <img src="https://img.shields.io/badge/Nuclei-active-8A2BE2?style=flat&logo=simple-icons&logoColor=white" alt="Nmap open-source tool" width="100">
+      <a href="https://github.com/aboul3la/Sublist3r">
+      <img src="https://img.shields.io/badge/Sublist3r-active-gold?style=flat&logo=simple-icons&logoColor=white" alt="Subfinder" width="100">
       </a>
     </td>
     <td align="center" width="50%">
       <a href="https://github.com/1KevinFigueroa/vector4cyber/blob/main/LICENSE">
-        <img src="https://img.shields.io/badge/License-Apache%202.0-brightgreen?labelColor=gray&logo=github" alt="Apache 2.0">
-    </a>
+        <img src="https://img.shields.io/badge/License-Apache%202.0-brightgreen?labelColor=gray&logo=github" alt="Apache 2.0 License">
       </a>
     </td>
   </tr>
   <tr>
     <td align="center" width="50%">
       <a href="">
-        <img src="https://github.com/1KevinFigueroa/vector4cyber/blob/main/RTFM-Knowledge/img/appLogos/nuclei.png" width="150" alt="Amass Logo">
+        <img src="https://github.com/1KevinFigueroa/vector4cyber/blob/main/RTFM-Knowledge/img/appLogos/sublist3r.png" width="300" alt="Amass Logo">
       </a>
     </td>
     <td align="center" width="50%">
@@ -24,23 +23,18 @@
   </tr>
 </table>
 
-# Converter Nuclei Text file  → JSON file vectorized
+# Subdomain Sublist3r  → JSON Converter
 
-Converting Subfinder results from a plain text file to a structured JSON format makes a significant difference when the data is being vectorized. Properly structured JSON with unique IDs is extremely useful for aggregating and correlating complex data in a vectorized workflow. High-quality, fast, and accurate data is critical for red team pipelines, security dashboards, and vector databases.
+Converting Sublist3r results from a plain text file to a structured JSON format makes a significant difference when the data is being vectorized. Properly structured JSON with unique IDs is extremely useful for aggregating and correlating complex data in a vectorized workflow. High-quality, fast, and accurate data is critical for red team pipelines, security dashboards, and vector databases.
 
-The problem with subfinder's output to a text file will be structured subdomains in a list. When the output in a JSON file
+The problem with subfinder's output to a text file will be structured subdomains in a list. When the output in a JSON file 
 
-### Usage:
-convert_nuclei2json.py [-h] -i INPUT -o OUTPUT
+### Sublist3r TEXT file structure output example ❌
 
-### Nuclei TEXT file structure output example ❌
+example.com
 
-[INF] Targets loaded for current scan: 1
-[INF] Running httpx on input host
-[INF] Found 1 URL from httpx
-[INF] Templates clustered: 2207 (Reduced 2085 Requests)
-[cookies-without-secure] [javascript] [info] example.com ["spravka"]
-[cookies-without-httponly] [javascript] [info] example.com ["spravka","_yasc"]
+### Sublst3r JSON file structure output example ❌
+{"host":"aleksandr-kulishov.yandex.ru","input":"yandex.ru","source":"reconeer"}
 
 ### A JSON structure option to vectorized ✅
 JSON file structure example:
@@ -53,13 +47,13 @@ From a high-level architecture perspective, the shift from flat-file ingestion t
 
 In the world of vector databases—specifically Qdrant, Milvus, and Weaviate, context is the currency of accuracy. Here is the breakdown of why parsers is the "missing link" for these systems.
 
-- Reads a text file containing subdomains (e.g., from `subfinder -silent -o subs.txt`)
+- Reads a text file containing subdomains
 - Cleans and normalizes each line
 - Assigns a unique, stable ID to every entry
 - Serializes the result as JSON for downstream automation
 
 Typical use cases:
 
-- Ingesting subdomains into a **vector database** (Qdrant, Milvus, Weaviate, more coming soon etc.) for semantic search and correlation made easier
+- Ingesting subdomains into a **vector database** and give the user the ability to select a vector size  (Qdrant, Milvus, Weaviate, more coming soon etc.) for semantic search and correlation made easier
 - Powering recon dashboards or graphs (e.g., host → vuln → service relationships)
 - Joining subdomains with WHOIS, DNS, HTTP fingerprinting, or vulnerability scan data
